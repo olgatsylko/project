@@ -4,7 +4,7 @@ const promoSchema = {
     additionalProperties: false,
     properties: {
         promoCode: {
-            type: "null"
+            type: "string"
         },
         timeLeft: {
             type: "integer"

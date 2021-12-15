@@ -4,10 +4,12 @@ class PageHolder {
     #page = null;
     #browser = null;
     #baseUrl = 'https://www.iherb.com/';
+ 
 
     get page(){
         return this.#page
     }
+
     get browser(){
         return this.#browser;
     }
@@ -16,7 +18,8 @@ class PageHolder {
     }
     async launch(){
         this.#browser = await puppeteer.launch({headless:false, defaultViewport: null,
-        args: ['--start-maximized']});
+        args: ['--start-maximized']});//'--lang=en-GB,en'
+        
     }
     async create() {
         this.#page = await this.#browser.newPage();
@@ -32,6 +35,7 @@ class PageHolder {
             url = `${this.#baseUrl}${url}`;
         }
         await this.#page.goto(url);
+      
     }
 }
 

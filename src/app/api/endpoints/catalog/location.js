@@ -1,9 +1,9 @@
 const BaseApi = require ('../../baseApi');
 
-class Location extends BaseApi {
-    async getLocation(){
-        return this.get('https://catalog.app.iherb.com/ccl/location?&_=1639255035101');
+class Catalog extends BaseApi {
+    async getBlogs(){
+        return this.get('https://www.iherb.com/catalog/getlatestblogspartial?isAjax=true');
     }
 }
 
-module.exports = Location;
+module.exports = Catalog;

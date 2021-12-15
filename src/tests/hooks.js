@@ -3,7 +3,7 @@ const app = require ('../app/app');
 
 exports.mochaHooks = {
     beforeAll: async function() {
-        await app.ui.ph.launch();
+        await app.ui.ph.launch();  
     },
     beforeEach: async function () {
         await app.ui.ph.create();

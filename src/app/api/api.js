@@ -1,7 +1,8 @@
 const BaseApi = require ('./baseApi');
 const Image = require ('./endpoints/images/image');
-const Location = require ('./endpoints/catalog/location');
-const contentPromo = require ('./endpoints/content/contentPromo');
+const Catalog = require ('./endpoints/catalog/location');
+const ContentPromo = require ('./endpoints/content/contentPromo');
+const SearchEp = require ('./endpoints/search/search');
 const schema = require ('../api/schemas/schema');
 
 class Api extends BaseApi {
@@ -11,12 +12,16 @@ class Api extends BaseApi {
     }
 
     get content() {
-        return this.createGetter(contentPromo);
+        return this.createGetter(ContentPromo);
     }
 
-    get catalogCCL() {
-        return  this.createGetter(Location);
+    get catalog() {
+        return  this.createGetter(Catalog);
     }
+    get srchEndP(){
+        return  this.createGetter(SearchEp);
+    }
+
 }
 
 module.exports = Api;
